@@ -5,6 +5,15 @@
   Alekseon_CustomFormsFrontend
   <br>  
 </h1>  
+
+<div align="center">
+
+![Magento 2](https://img.shields.io/badge/Magento%202-2.4.x-red.svg)
+![Production Ready](https://img.shields.io/badge/Deployment-Production--Ready-blue)
+![Complete](https://img.shields.io/badge/Status-Complete-brightgreen)
+
+</div>
+
 <p align="center">
 <strong>This module does not work separately.</strong>
 <br>
