@@ -55,7 +55,8 @@ class Field extends \Magento\Framework\View\Element\Template
         }
         $frontendBlocks = $frontendInputTypeConfig->getFrontendBlocks();
         $frontendBlock = [];
-        $frontendInputBlock = $attribute->getAttributeExtraParam('frontend_input_block');
+        // null for a field without a block type: PHP 8.5 deprecates null as an array key.
+        $frontendInputBlock = (string)$attribute->getAttributeExtraParam('frontend_input_block');
 
         if (isset($frontendBlocks['default'])) {
             $frontendBlock = $frontendBlocks['default'];

@@ -35,7 +35,7 @@ class FrontendBlocksRepository
      */
     public function getFrontendBlock(FormRecord\Attribute $attribute)
     {
-        $frontendInput = $attribute->getFrontendInput();
+        $frontendInput = (string)$attribute->getFrontendInput();
 
         if (isset($this->frontendBlocks[$frontendInput])) {
             return $this->frontendBlocks[$frontendInput];
