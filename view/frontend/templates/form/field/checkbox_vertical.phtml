@@ -9,7 +9,7 @@
  * @var $escaper \Magento\Framework\Escaper
  */
 ?>
-<div class="control <?= count($block->getOptions()) > 12 ? 'multi-columns' : '' ?> <?= $block->getContainerClass() ?>">
+<div class="control <?= count($block->getOptions()) > 12 ? 'multi-columns' : '' ?> <?= $escaper->escapeHtmlAttr($block->getContainerClass()) ?>">
     <?php foreach ($block->getOptions() as $optionId => $optionLabel): ?>
         <div class="checkbox-container">
             <input
@@ -18,7 +18,8 @@
                 id="<?= $escaper->escapeHtmlAttr($block->getId() . '-option-' . $optionId) ?>"
                 value="<?= $escaper->escapeHtmlAttr($optionId) ?>"
                 <?php if ($block->isSelected($optionId)): ?>checked<?php endif ?>
-                data-validate=<?= $block->getDataValidateJson() ?>
+                data-msg-required="<?= $escaper->escapeHtmlAttr(__('This field is required')) ?>"
+                data-validate="<?= $escaper->escapeHtmlAttr($block->getDataValidateJson()) ?>"
             >
                 <label for="<?= $escaper->escapeHtmlAttr($block->getId() . '-option-' . $optionId) ?>">
                     <?= $escaper->escapeHtml($optionLabel, $block->getLabelAllowedTags()) ?>
